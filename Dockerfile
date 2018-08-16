@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.4-slim
 
 # start setting up the app
 ENV APP_HOME /myapp
@@ -9,6 +9,7 @@ RUN set -x \
     && apt-get update  \
     && apt-get install -y \
        libsqlite3-dev \
+       build-essential \
        default-libmysqlclient-dev \
        libv8-dev \
        default-mysql-client \

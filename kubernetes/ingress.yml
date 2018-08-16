@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: rd-ingress
+spec:
+  backend:
+    serviceName: rd-service
+    servicePort: 3000

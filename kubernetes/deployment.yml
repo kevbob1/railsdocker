@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rd-deployment
+  labels:
+    app: railsdocker
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: railsdocker
+  template:
+    metadata:
+      labels:
+        app: railsdocker
+    spec:
+      containers:
+      - name: railsdocker
+        imagePullPolicy: Never
+        image: railsdocker:1
+        ports:
+        - name: http
+          containerPort: 3000
